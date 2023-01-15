@@ -4,7 +4,7 @@ const path = require("path");
 const app = express();
 
 // middleware 설정 앞으로 모든 파일은 /src 경로를 기준으로 찾아올 것임
-app.use("/src", express.static(path.resolve(__dirname, "src")));
+app.use("/src", express.static(path.resolve(__dirname, "src",)));
 
 // express route
 // get method

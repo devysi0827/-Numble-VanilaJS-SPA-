@@ -1,3 +1,6 @@
+import Home from "./pages/Home.js";
+import Detail from "./pages/Detail.js";
+
 const navigateTo = url => {
     history.pushState(null,null,url)
     router();
@@ -5,9 +8,8 @@ const navigateTo = url => {
 
 const router = async () => {
     const routes = [
-        {path :"/", view: () => console.log('all')},
-        {path :"/image", view: () => console.log('img')},
-        {path :"/text", view: () => console.log('text')}
+        {path :"/", view: Home},
+        {path :"/detail", view: Detail},
     ];
     
     const potentialMatches = routes.map(route => {
@@ -26,7 +28,12 @@ const router = async () => {
             isMatch : true
         }
     }
-    console.log(match.route.view)
+
+    // spa change
+    const view = new match.route.view()
+
+    document.querySelector('#root').innerHTML = await view.getHtml();
+    // console.log(match.route.view)
 };
 
 // 세션 기록이 바뀔 때 일어나는 이벤트를 별도 처리
