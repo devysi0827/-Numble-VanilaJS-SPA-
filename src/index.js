@@ -1,3 +1,8 @@
+const navigateTo = url => {
+    history.pushState(null,null,url)
+    router();
+};
+
 const router = async () => {
     const routes = [
         {path :"/", view: () => console.log('all')},
@@ -24,8 +29,18 @@ const router = async () => {
     console.log(match.route.view)
 };
 
+// 세션 기록이 바뀔 때 일어나는 이벤트를 별도 처리
+window.addEventListener('popstate',router)
 
 document.addEventListener("DOMContentLoaded", () => {
+    document.body.addEventListener("click", e => {
+        if (e.target.matches('[data-link]')) {
+            // 기존 이벤트를 막고
+            e.preventDefault();
+            // 이동
+            navigateTo(e.target.href)
+        }
+    })
     router();
 })
 
