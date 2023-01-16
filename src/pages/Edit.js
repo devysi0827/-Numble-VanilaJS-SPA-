@@ -10,6 +10,7 @@ export default class extends AbstractView {
     return `
             <p> Edit </p>
             <a href="/home" data-link> home </a>
+            <button id="bb">my button</button>
         `;
   }
 }

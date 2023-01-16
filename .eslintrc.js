@@ -1,4 +1,5 @@
 module.exports = {
+  parser: "@babel/eslint-parser",
   env: {
     browser: true,
     commonjs: true,
@@ -8,8 +9,10 @@ module.exports = {
   extends: "eslint:recommended",
   overrides: [],
   parserOptions: {
-    ecmaVersion: "latest",
     sourceType: "module",
+    // jsx: true,
+    ecmaVersion: 8,
+    requireConfigFile: false,
   },
   rules: {},
 };
