@@ -1,7 +1,8 @@
 import Home from "./pages/Home.js";
 import Detail from "./pages/Detail.js";
 import Edit from "./pages/Edit.js";
-import { clickFunc } from "./components/homeLogic.js";
+import { clickFunc, addHomeComponent } from "./components/homeLogic.js";
+import { getPosts } from "./components/api.js";
 console.log("im index");
 
 export const navigateTo = (url) => {
@@ -39,8 +40,9 @@ const router = async () => {
 
   document.querySelector("#Root").innerHTML = await view.getHtml();
   if (match.route.path === "/") {
-    console.log("match");
     clickFunc();
+    addHomeComponent();
+    getPosts();
   }
 };
 

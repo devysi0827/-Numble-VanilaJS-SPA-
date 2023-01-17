@@ -8,10 +8,11 @@ export default class extends AbstractView {
 
   async getHtml() {
     return `
-            <button id="flexHome">
-              <img id="imgHome" src="src/assets/pen.png" alt="pen" />
-              <p> 새 글 작성하기</button>
-            </div>
+      <button id="homeBtn">
+        <img id="homeImg" src="../src/assets/pen.png" alt="pen" />
+        <p> 새 글 작성하기</p>
+      </button>
+      <div id="homeMessages"></div>
         `;
   }
 }

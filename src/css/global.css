@@ -1,5 +1,10 @@
+/* common */
 p {
   margin: 0px;
+}
+
+body {
+  margin: 0px 8px;
 }
 
 #Header {
@@ -11,7 +16,8 @@ p {
   font-weight: 400;
 }
 
-#flexHome {
+/* home */
+#homeBtn {
   display: flex;
   justify-content: center;
   justify-items: center;
@@ -20,23 +26,19 @@ p {
   line-height: 20px;
   font-weight: 700;
   height: 67px;
-  width: 336px;
+  width: 100%;
   border-radius: 12px;
   background-color: #bb2649;
   color: white;
+  margin: 0;
 }
 
-#imgHome {
+#homeImg {
   margin-right: 10px;
   width: 23px;
   height: 23px;
 }
 
-#flexVertical {
-  display: flex;
-  flex-direction: column;
-  margin: 24px 20px 44px;
-  font-size: 24px;
-  line-height: 28px;
-  font-weight: 400;
+#homeMessages {
+  overflow: scroll;
 }

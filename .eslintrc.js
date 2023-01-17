@@ -14,5 +14,9 @@ module.exports = {
     ecmaVersion: 8,
     requireConfigFile: false,
   },
-  rules: {},
+  rules: {
+    globals: {
+      axios: true,
+    },
+  },
 };
