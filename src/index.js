@@ -1,21 +1,19 @@
 import Home from "./pages/Home.js";
 import Detail from "./pages/Detail.js";
 import Edit from "./pages/Edit.js";
-import Button from "./components/button.js";
-import Div from "./components/div.js";
-
+import { clickFunc } from "./components/homeLogic.js";
 console.log("im index");
 
-const navigateTo = (url) => {
+export const navigateTo = (url) => {
   history.pushState(null, null, url);
   router();
 };
 
 const router = async () => {
   const routes = [
-    { path: "/", view: Home, jsFile: Button },
+    { path: "/", view: Home },
     { path: "/detail", view: Detail },
-    { path: "/edit", view: Edit, jsFile: Div },
+    { path: "/edit", view: Edit },
   ];
 
   const potentialMatches = routes.map((route) => {
@@ -39,8 +37,11 @@ const router = async () => {
   // spa change
   const view = new match.route.view();
 
-  document.querySelector("#root").innerHTML = await view.getHtml();
-  match.route.jsFile();
+  document.querySelector("#Root").innerHTML = await view.getHtml();
+  if (match.route.path === "/") {
+    console.log("match");
+    clickFunc();
+  }
 };
 
 // 세션 기록이 바뀔 때 일어나는 이벤트를 별도 처리

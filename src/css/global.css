@@ -1,3 +1,42 @@
 p {
-    color: red;
-  }
+  margin: 0px;
+}
+
+#Header {
+  display: flex;
+  justify-content: flex-end;
+  margin: 24px 20px 44px;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+#flexHome {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  padding-top: 22px;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 700;
+  height: 67px;
+  width: 336px;
+  border-radius: 12px;
+  background-color: #bb2649;
+  color: white;
+}
+
+#imgHome {
+  margin-right: 10px;
+  width: 23px;
+  height: 23px;
+}
+
+#flexVertical {
+  display: flex;
+  flex-direction: column;
+  margin: 24px 20px 44px;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 400;
+}
